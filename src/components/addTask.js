@@ -1,5 +1,5 @@
 import edit from "../assets/edit.svg";
-import editTask  from "./editTask";
+import editTask from "./editTask";
 
 export default function addTask() {
   class Task {
@@ -67,11 +67,11 @@ export default function addTask() {
 
         render.addTaskToList(task);
 
-           // add event button edit task
+        // add event button edit task
         document.getElementById("edit-btn").addEventListener("click", () => {
           document.getElementById("edit-modal").classList.remove("hidden");
 
-          editTask()
+          editTask();
         });
       });
     }
@@ -98,7 +98,6 @@ export default function addTask() {
   // load event
   document.addEventListener("DOMContentLoaded", Storage.displayTasks);
 
-
   document.getElementById("task-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -107,7 +106,7 @@ export default function addTask() {
     const dueDate = document.getElementById("due-date").value;
     const taskId = Date.now();
 
-    const task = new Task(name, details, dueDate, "New",taskId);
+    const task = new Task(name, details, dueDate, "New", taskId);
 
     const render = new Render();
 
